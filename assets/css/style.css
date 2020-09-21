@@ -794,7 +794,8 @@ section {
 # About
 --------------------------------------------------------------*/
 .about {
-  background: url("../img/about-bg2.jpg") center center;
+  /*background: url("../img/about-bg2.jpg") center center;*/
+  background-position: center;
   background-size: cover;
   position: relative;
   padding: 80px 0;
@@ -982,6 +983,7 @@ section {
 
 .menu .menu-img {
   width: 150px;
+  min-height: 200px;
   /*border-radius: 50%;*/
   float: left;
   border: 5px solid rgba(255, 255, 255, 0.2);
@@ -1106,7 +1108,9 @@ section {
 # Events
 --------------------------------------------------------------*/
 .events {
-  background: url(../img/events.jpg) center center no-repeat;
+  /*background: url(../img/events.jpg) center center no-repeat;*/
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
   position: relative;
 }
