@@ -14,11 +14,29 @@
         $(this).remove();
       });
     }
+    var selectedLng = sessionStorage.getItem('lang');
+    $('.languages li').removeClass('active');
+    if(!!selectedLng){
+      if(selectedLng == 'english'){
+        // $('.languages li .engBtn').click();
+          $('.languages li.engBtn').addClass('active');
+          $('.marLang').hide();
+          $('.engLang').show();
+      }else{
+        // $('.languages li .marBtn').click();
+        $('.languages li.marBtn').addClass('active');
+        $('.marLang').show();
+        $('.engLang').hide();
+      }
+    }else{
+      $('.engLang').hide();
+      sessionStorage.setItem('lang', 'marathi');
+    }
   });
 
   // Smooth scroll for the navigation menu and links with .scrollto classes
   var scrolltoOffset = $('#header').outerHeight() - 1;
-  $(document).on('click', '.nav-menu a, .mobile-nav a, .scrollto', function(e) {
+  $(document).on('click', '.nav-menu a, .mobile-nav a, .gotocertificate, .scrollto', function(e) {
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
       var target = $(this.hash);
       if (target.length) {
@@ -219,8 +237,8 @@
   }
   $(window).on('load', function() {
     aos_init();
-
-    $('.engLang').hide();
+    
+    
   });
 
 })(jQuery);
@@ -243,12 +261,16 @@
 
 $('.languages li').click(function(){
   $('.languages li').removeClass('active');
+  
+
   if($(this).hasClass('engBtn')){
     $(this).addClass('active');
+    sessionStorage.setItem('lang', 'english');
     $('.marLang').hide();
     $('.engLang').show();
   }else{
     $(this).addClass('active');
+    sessionStorage.setItem('lang', 'marathi');
     $('.engLang').hide();
     $('.marLang').show();
 

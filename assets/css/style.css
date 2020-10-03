@@ -38,22 +38,43 @@ h1, h2, h3, h4, h5, h6 {
   bottom: 0;
   z-index: 9999;
   overflow: hidden;
-  background: #1a1814;
+  background: #554e41;
+}
+
+#preloader img{
+    position: fixed;
+    top: calc(46% - 30px);
+    left: calc(46% - 30px);
+    height: 75px;
 }
 
 #preloader:before {
   content: "";
   position: fixed;
-  top: calc(50% - 30px);
-  left: calc(50% - 30px);
-  border: 6px solid #1a1814;
+  top: calc(40% - 30px);
+  left: calc(45% - 30px);
+  border: 6px solid #554e41;
   border-top-color: #cda45e;
   border-bottom-color: #cda45e;
   border-radius: 50%;
-  width: 60px;
-  height: 60px;
+  width: 160px;
+  height: 160px;
   -webkit-animation: animate-preloader 1s linear infinite;
   animation: animate-preloader 1s linear infinite;
+}
+
+@media screen and (max-width: 768px) {
+  #preloader img{
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+
+  #preloader:before {
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
 }
 
 @-webkit-keyframes animate-preloader {
@@ -1836,4 +1857,9 @@ section {
 
 .marLang{
   display: block;
+}
+
+/*CSS for tns page*/
+.tncpage{
+  margin-top: 130px;
 }
